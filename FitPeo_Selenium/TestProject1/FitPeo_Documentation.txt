@@ -1,0 +1,76 @@
+Setup and Run Guide for Selenium Test Script
+1. Prerequisites
+Ensure you have the following installed on your system:
+
+.NET SDK: Required for running NUnit tests.
+Visual Studio or an IDE: Such as Visual Studio, which supports C# development.
+Google Chrome: Ensure Chrome is installed since the script uses ChromeDriver.
+Selenium WebDriver: For browser automation.
+NUnit Framework: For test execution and assertions.
+
+2. Setting Up Your Development Environment
+Install .NET SDK
+
+Download and install the .NET SDK from Microsoft's .NET Download Page. Follow the instructions for your operating system.
+
+Install Visual Studio or an IDE
+
+Install Visual Studio from Visual Studio Downloads or any other IDE that supports C# development.
+
+Install Chrome and ChromeDriver
+
+Chrome: Download and install the latest version of Google Chrome from Google Chrome's Official Site.
+ChromeDriver: Download the version compatible with your Chrome browser from ChromeDriver Download Page. Ensure chromedriver.exe is in your system PATH or the same directory as your script.
+Set Up Selenium and NUnit
+
+Open your project in Visual Studio and install the necessary NuGet packages:
+
+Selenium.WebDriver
+Selenium.WebDriver.ChromeDriver
+NUnit
+You can install these packages via NuGet Package Manager Console:
+
+sh
+Copy code
+Install-Package Selenium.WebDriver
+Install-Package Selenium.WebDriver.ChromeDriver
+Install-Package NUnit
+
+3. Script Overview
+This script automates the testing of the FitPeo Revenue Calculator page using Selenium WebDriver and NUnit. It performs the following tasks:
+
+Navigates to the FitPeo homepage.
+Clicks on the Revenue Calculator link.
+Scrolls to and interacts with the slider element.
+Validates the slider’s value and performs actions on checkboxes.
+Asserts the correctness of total recurring reimbursement values.
+Ensure that when the value 560 is entered in the text field, the slider's position is updated to reflect the value 560.
+
+4. Running the Test
+Open Your Project in Visual Studio
+
+Open the .cs file containing your test script.
+
+Build Your Project
+
+Build the project to ensure all dependencies are correctly installed and there are no syntax errors.
+
+sh
+Copy code
+Build > Build Solution
+Run the Test
+
+Use the Test Explorer in Visual Studio to run the NUnit tests.
+
+Ensure that ChromeDriver is properly set up in your system PATH or located in the project directory.
+
+5. Troubleshooting
+Browser Not Opening: Ensure that Chrome and ChromeDriver versions are compatible.
+Test Failing: Verify that the XPath selectors used in the script match the actual elements on the web page. Update them if necessary.
+Permissions Issues: Ensure you have the necessary permissions to execute the script and access the files.
+
+6. Code Explanation
+Setup Method: Initializes the ChromeDriver and maximizes the browser window.
+Test1 Method: Contains the test steps including navigation, interaction with elements, and validation.
+clickOnCheckbox Method: Clicks specific checkboxes on the page.
+ScrollIntoView Method: Scrolls the browser view to make the specified element visible.
